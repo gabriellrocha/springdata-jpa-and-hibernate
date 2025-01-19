@@ -1,7 +1,9 @@
 package com.gabrielcoding.jpa;
 
 import com.gabrielcoding.jpa.models.Author;
+import com.gabrielcoding.jpa.models.Video;
 import com.gabrielcoding.jpa.repositories.AuthorRepository;
+import com.gabrielcoding.jpa.repositories.VideoRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,19 +18,16 @@ public class JpaApplication {
 
 	@Bean
 	public CommandLineRunner commandLineRunner(
-			AuthorRepository repository
+			VideoRepository videoRepository
 	){
 		return args -> {
 
-			var author = Author.builder()
-					.firstName("Gabriel")
-					.lastName("Silva")
-					.email("gabriel@mail.com")
-					.age(25)
+			var video = Video.builder()
+					.url("http://www.video.com")
+					.name("Learn Spring Data JPA and Hibernate")
 					.build();
 
-			var saved = repository.save(author);
-			System.out.print(saved);
+			videoRepository.save(video);
 		};
 	}
 }
