@@ -1,24 +1,25 @@
 package com.gabrielcoding.jpa.models;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToMany;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@SuperBuilder
 @Entity
-public class Author {
+public class Author extends BaseEntity {
 
-    @Id
-    @GeneratedValue
-    private Integer id;
 
     @Column(length = 35, nullable = false)
     private String firstName;
@@ -30,12 +31,6 @@ public class Author {
 
     @Column(nullable = false)
     private Integer age;
-
-    @Column(updatable = false)
-    private LocalDateTime createdAt;
-
-    @Column(insertable = false)
-    private LocalDateTime updatedAt;
 
     @ManyToMany(mappedBy = "authors")
     private List<Course> courses;

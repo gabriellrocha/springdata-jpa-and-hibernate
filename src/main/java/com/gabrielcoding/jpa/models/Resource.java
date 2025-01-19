@@ -1,23 +1,20 @@
 package com.gabrielcoding.jpa.models;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@SuperBuilder
 @Entity
-public class Resource {
-
-    @Id
-    @GeneratedValue
-    private Integer id;
+public class Resource extends BaseEntity {
 
     private String name;
 
@@ -25,5 +22,6 @@ public class Resource {
 
     private String url;
 
+    @OneToOne
     private Lecture lecture;
 }
