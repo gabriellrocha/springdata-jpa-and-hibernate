@@ -15,7 +15,7 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @SuperBuilder
 @Entity
-@PrimaryKeyJoinColumn(name = "file_id")
+//@PrimaryKeyJoinColumn(name = "file_id")
 // @DiscriminatorValue("File") only with strategy SINGLE TABLE
 public class File extends Resource {
 

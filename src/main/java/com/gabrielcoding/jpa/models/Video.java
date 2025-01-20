@@ -15,7 +15,7 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @SuperBuilder
 @Entity
-@PrimaryKeyJoinColumn(name = "video_id") // by default uses the superclass field name
+//@PrimaryKeyJoinColumn(name = "video_id") // by default uses the superclass field name
 // @DiscriminatorValue("Video") only with strategy SINGLE TABLE
 public class Video extends Resource {
 

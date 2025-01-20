@@ -15,7 +15,7 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @SuperBuilder
 @Entity
-@PrimaryKeyJoinColumn(name = "text_id")
+//@PrimaryKeyJoinColumn(name = "text_id")
 //@DiscriminatorValue("Text") only with strategy SINGLE TABLE
 public class Text extends Resource {
 
