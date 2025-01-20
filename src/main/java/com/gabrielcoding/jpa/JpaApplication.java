@@ -23,26 +23,16 @@ public class JpaApplication {
 	){
 		return args -> {
 
-//			Faker faker = new Faker();
-//			for (int i = 0; i < 40; i++) {
+//			var author = Author.builder()
+//					.id(1)
+//					.firstName("biel")
+//					.email("biel@email.com")
+//					.age(50)
+//					.build();
 //
-//				var author = Author.builder()
-//						.firstName(faker.name().firstName())
-//						.lastName(faker.name().lastName())
-//						.age(faker.number().numberBetween(18, 70))
-//						.email(faker.internet().emailAddress())
-//						.build();
-//
-//				repository.save(author);
-//			}
+//			repository.save(author); métoodo save realizar uma consulta de atualização ou consulta de inserção
 
-			List<Author> l1 = repository.findAllByFirstNameIgnoreCase("jackson");
-			List<Author> l2 = repository.findAllByFirstNameEndsWithIgnoreCase("a");
-			List<Author> l3 = repository.findAllByFirstNameStartsWithIgnoreCase("g");
-
-			l1.forEach(System.out::println);
-			l2.forEach(System.out::println);
-			l3.forEach(System.out::println);
+			repository.updateAuthor(70, 1);
 
 		};
 	}

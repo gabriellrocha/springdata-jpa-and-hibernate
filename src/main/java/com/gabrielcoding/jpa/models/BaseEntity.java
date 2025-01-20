@@ -14,8 +14,8 @@ import java.time.LocalDateTime;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@SuperBuilder
 @MappedSuperclass
+@SuperBuilder
 public class BaseEntity {
 
     @Id
