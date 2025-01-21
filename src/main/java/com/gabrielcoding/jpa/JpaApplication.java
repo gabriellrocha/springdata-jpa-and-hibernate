@@ -2,7 +2,6 @@ package com.gabrielcoding.jpa;
 
 import com.gabrielcoding.jpa.models.Author;
 import com.gabrielcoding.jpa.repositories.AuthorRepository;
-import com.github.javafaker.Faker;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -32,7 +31,14 @@ public class JpaApplication {
 //
 //			repository.save(author); métoodo save realizar uma consulta de atualização ou consulta de inserção
 
-			repository.updateAuthor(70, 1);
+//			repository.updateAuthor(70, 1);
+
+			// namedQuery
+			repository.findBy(30)
+					.forEach(System.out::println);
+
+			// namedQuery
+			repository.updateBy(50);
 
 		};
 	}
